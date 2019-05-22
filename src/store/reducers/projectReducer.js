@@ -1,21 +1,5 @@
 const initState = {
-  projects: [
-    {
-      id: 1,
-      title: "the good",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-    },
-    {
-      id: 2,
-      title: "the bad",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-    },
-    {
-      id: 3,
-      title: "the ugly",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-    }
-  ]
+  projects: []
 };
 
 const projectReducer = (state = initState, action) => {
