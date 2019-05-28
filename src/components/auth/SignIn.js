@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { signIn } from "../../store/actions/authActions";
 import { connect } from "react-redux";
+import {Redirect} from "react-router-dom";
 
 class SignIn extends Component {
   state = {
@@ -18,15 +19,13 @@ class SignIn extends Component {
     this.props.signIn(this.state);
   };
   render() {
-    const { authError } = this.props;
+    const { authError, auth } = this.props;
+    if (auth.uid) return <Redirect to="/" />;
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="bg-light">
           {authError ? (
-            <div
-              className="alert alert-warning fade show"
-              role="alert"
-            >
+            <div className="alert alert-warning fade show" role="alert">
               {authError}
               <button
                 type="button"
@@ -37,7 +36,9 @@ class SignIn extends Component {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-          ) : (<div></div>)}
+          ) : (
+            <div />
+          )}
           <h5 className="text-muted lead"> Sign In</h5>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -80,7 +81,8 @@ class SignIn extends Component {
 }
 
 const mapStateToProps = state => ({
-  authError: state.auth.authError
+  authError: state.auth.authError,
+  auth: state.firebase.auth
 });
 
 export default connect(
