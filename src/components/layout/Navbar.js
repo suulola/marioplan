@@ -28,8 +28,7 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <SignInLinks />
-            <SignOutLinks />
+            {auth.uid ? <SignInLinks /> : <SignOutLinks />}
           </div>
         </nav>
       </div>
