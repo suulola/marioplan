@@ -2,17 +2,19 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SignInLinks from "./SignedInLinks";
 import SignOutLinks from "./SignedOutLinks";
+import { connect } from "react-redux";
 
 class Navbar extends Component {
   state = {
     isLoggedIn: true
   };
   render() {
+    const { auth } = this.props;
     return (
       <div>
         <nav className="navbar navbar-expand-md navbar-light bg-secondary mb-5">
           <Link className="navbar-brand" to="/">
-            Navbar
+            MarioPlan
           </Link>
           <button
             className="navbar-toggler"
@@ -26,7 +28,8 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            {this.state.isLoggedIn ? <SignInLinks /> : <SignOutLinks />}
+            <SignInLinks />
+            <SignOutLinks />
           </div>
         </nav>
       </div>
@@ -34,4 +37,11 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    auth: state.firebase.auth
+  };
+};
+
+export default connect(mapStateToProps)(Navbar);
