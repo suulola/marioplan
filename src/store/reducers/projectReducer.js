@@ -9,7 +9,6 @@ const projectReducer = (state = initState, action) => {
       // const newP = { ...action.payload, id: state.projects.length + 1 };
       return {
         ...state
-
         // projects: [...state.projects, newP]
       };
     case "CREATE_PROJECT_ERROR":

@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import moment from "moment";
 
 const ProjectDetails = props => {
   let content;
@@ -20,10 +21,10 @@ const ProjectDetails = props => {
               <p className="card-text">{project.content}</p>
               <hr />
               <p className="card-subtitle text-muted m-0 p-0">
-                Posted by {project.authorLastName}
+                Posted by {project.authorFirstName} {project.authorLastName}
               </p>
               <sub className="text-muted m-0 p-0">
-                Date is {new Date(project.createdAt.seconds).toDateString()}
+                Posted {moment(project.createdAt.toDate()).fromNow()}
               </sub>
             </div>
           </div>

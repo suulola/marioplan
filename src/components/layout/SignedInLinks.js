@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
 
 const SignedInLinks = props => {
+  const {profile} = props
+
   return (
     <div className="navbar-nav w-100 d-flex justify-content-end mr-5">
       <Link className="nav-item nav-link text-white" to="/create">
@@ -21,8 +23,8 @@ const SignedInLinks = props => {
         className="nav-item nav-link rounded-circle bg-danger text-white"
         to="/"
       >
-        NN
-      </Link>
+        {profile ? profile.initials : null}
+     </Link>
     </div>
   );
 };

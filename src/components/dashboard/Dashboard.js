@@ -6,6 +6,9 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 
+
+
+
 export class Dashboard extends Component {
   render() {
     const { projects, auth } = this.props;

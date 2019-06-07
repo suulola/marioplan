@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import SignInLinks from "./SignedInLinks";
 import SignOutLinks from "./SignedOutLinks";
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
 
 class Navbar extends Component {
   state = {
     isLoggedIn: true
   };
   render() {
-    const { auth } = this.props;
+    const { auth, user } = this.props;
     return (
       <div>
         <nav className="navbar navbar-expand-md navbar-light bg-secondary mb-5">
@@ -28,7 +30,7 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            {auth.uid ? <SignInLinks /> : <SignOutLinks />}
+            {auth.uid ? <SignInLinks profile={user} /> : <SignOutLinks />}
           </div>
         </nav>
       </div>
@@ -38,8 +40,12 @@ class Navbar extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    user: state.firebase.profile
   };
 };
 
-export default connect(mapStateToProps)(Navbar);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "users" }])
+)(Navbar);
