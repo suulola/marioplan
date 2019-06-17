@@ -4,7 +4,7 @@ import moment from "moment";
 
 const ProjectSummary = ({ project }) => {
   return (
-    <div className=" mb-4 bg-light" style={{ width: "18rem" }}>
+    <div className=" mb-4 bg-light rounded" style={{ width: "18rem" }}>
       <div className="card-body">
         <Link to={`/project/${project.id}`} className="card-title">
           {" "}
@@ -15,7 +15,7 @@ const ProjectSummary = ({ project }) => {
         </p>
         <sub className="text-muted m-0 p-0">
           {" "}
-          {moment(project.createdAt.toDate()).fromNow()}{" "}
+          {moment(project.createdAt.toDate()).calendar()}
         </sub>
       </div>
     </div>

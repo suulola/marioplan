@@ -6,9 +6,6 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 
-
-
-
 export class Dashboard extends Component {
   render() {
     const { projects, auth } = this.props;
@@ -28,12 +25,17 @@ export class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  projects: state.firestore.ordered.projects,
-  auth: state.firebase.auth
-});
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    projects: state.firestore.ordered.projects,
+    auth: state.firebase.auth
+  };
+};
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "projects" }])
+  firestoreConnect([
+    { collection: "projects", orderBy: ['createdAt', 'desc'] },
+  ])
 )(Dashboard);
