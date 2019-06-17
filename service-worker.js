@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/marioplan/precache-manifest.47566259ed9fce0750a38a0084e1dfa0.js"
+  "/marioplan/precache-manifest.dd6ebfad2ab24ae01e61d70cd50efadf.js"
 );
 
 workbox.clientsClaim();

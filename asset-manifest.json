@@ -1,13 +1,13 @@
 {
   "main.css": "/marioplan/static/css/main.54e32970.chunk.css",
-  "main.js": "/marioplan/static/js/main.d2e90ad7.chunk.js",
-  "main.js.map": "/marioplan/static/js/main.d2e90ad7.chunk.js.map",
+  "main.js": "/marioplan/static/js/main.dddb5bfa.chunk.js",
+  "main.js.map": "/marioplan/static/js/main.dddb5bfa.chunk.js.map",
   "runtime~main.js": "/marioplan/static/js/runtime~main.ee3d35ac.js",
   "runtime~main.js.map": "/marioplan/static/js/runtime~main.ee3d35ac.js.map",
-  "static/js/2.c50c0538.chunk.js": "/marioplan/static/js/2.c50c0538.chunk.js",
-  "static/js/2.c50c0538.chunk.js.map": "/marioplan/static/js/2.c50c0538.chunk.js.map",
+  "static/js/2.6ea3b4c3.chunk.js": "/marioplan/static/js/2.6ea3b4c3.chunk.js",
+  "static/js/2.6ea3b4c3.chunk.js.map": "/marioplan/static/js/2.6ea3b4c3.chunk.js.map",
   "index.html": "/marioplan/index.html",
-  "precache-manifest.47566259ed9fce0750a38a0084e1dfa0.js": "/marioplan/precache-manifest.47566259ed9fce0750a38a0084e1dfa0.js",
+  "precache-manifest.dd6ebfad2ab24ae01e61d70cd50efadf.js": "/marioplan/precache-manifest.dd6ebfad2ab24ae01e61d70cd50efadf.js",
   "service-worker.js": "/marioplan/service-worker.js",
   "static/css/main.54e32970.chunk.css.map": "/marioplan/static/css/main.54e32970.chunk.css.map"
 }
