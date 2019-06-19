@@ -24,7 +24,7 @@ const ProjectDetails = props => {
                 Posted by {project.authorFirstName} {project.authorLastName}
               </p>
               <sub className="text-muted m-0 p-0">
-                Posted {moment(project.createdAt.toDate()).fromNow()}
+                Posted {moment(project.createdAt.toDate()).format('LLLL')}
               </sub>
             </div>
           </div>
